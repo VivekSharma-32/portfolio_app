@@ -29,8 +29,7 @@ export const ProductCard = ({ heading, content, imgUrl }) => {
         <img
           src={imgUrl}
           alt={heading}
-          className="w-full h-full rounded-t-xl 
-                     transition-transform duration-300 ease-in-out hover:scale-105 object-cover"
+          className="w-full h-full rounded-t-xl object-cover"
         />
       </div>
       <div className="text-center px-5 pt-2">
