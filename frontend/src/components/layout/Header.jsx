@@ -19,7 +19,7 @@ const Header = () => {
       {/* HEADER TOP */}
       <div className="flex items-center justify-between w-full border-b border-yellow-50 mb-1 p-5">
         {/* LOGO */}
-        <div className="font-bold text-2xl md:text-3xl flex items-center gap-2 font-mono italic animate-pulse">
+        <div className="font-bold text-2xl md:text-3xl flex items-center gap-2 font-mono italic">
           <FaCode className="mt-1" /> Vivek
         </div>
 
