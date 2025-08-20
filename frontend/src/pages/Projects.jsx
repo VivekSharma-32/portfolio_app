@@ -27,18 +27,8 @@ const Projects = () => {
         />
         <ProductCard
           imgUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFXMVsqeqstL0GCNxoVwhjfqmumLoghY4ywQ&s"
-          heading="CRM Solution"
-          content="Robust and secure APIs designed for seamless integration. High-performance CRM for business workflows."
-        />
-        <ProductCard
-          imgUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFXMVsqeqstL0GCNxoVwhjfqmumLoghY4ywQ&s"
-          heading="Education Project"
-          content="Learning management system with student dashboards, course management, and interactive features."
-        />
-        <ProductCard
-          imgUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFXMVsqeqstL0GCNxoVwhjfqmumLoghY4ywQ&s"
-          heading="Travel Booking Project"
-          content="A modern travel booking system with search, reservations, and real-time availability."
+          heading="URL Shortener"
+          content="Lightning-fast URL shortener with custom aliases, QR codes, and click analytics—built for shareability and scale."
         />
       </div>
     </div>
