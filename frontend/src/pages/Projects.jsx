@@ -30,6 +30,11 @@ const Projects = () => {
           heading="URL Shortener"
           content="Lightning-fast URL shortener with custom aliases, QR codes, and click analytics—built for shareability and scale."
         />
+        <ProductCard
+          imgUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFXMVsqeqstL0GCNxoVwhjfqmumLoghY4ywQ&s"
+          heading="Job Portal"
+          content="A modern Job Portal that connects employers with job seekers—featuring smart search, resume uploads, applicant tracking, and role-based dashboards for seamless recruitment."
+        />
       </div>
     </div>
   );
