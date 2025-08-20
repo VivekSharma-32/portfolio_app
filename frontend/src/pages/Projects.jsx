@@ -17,7 +17,7 @@ const Projects = () => {
         />
         <ProductCard
           imgUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFXMVsqeqstL0GCNxoVwhjfqmumLoghY4ywQ&s"
-          heading="Multivendor Project"
+          heading="Multivendor E-commerce Project"
           content="A complete marketplace solution supporting multiple vendors, inventory management, and transactions."
         />
         <ProductCard
