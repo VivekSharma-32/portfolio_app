@@ -88,9 +88,7 @@ const Header = () => {
 
         {/* Content */}
         <h1 className="relative z-10 text-2xl sm:text-4xl md:text-5xl flex flex-col items-center gap-4">
-          <span className="flex items-center gap-2">
-            Hello <PiHandWavingFill className="text-yellow-400 animate-wave" />
-          </span>
+          <span className="flex items-center gap-2">Hello,</span>
           <TypeAnimation
             sequence={[
               "Full-Stack Developer",
