@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaConnectdevelop, FaCode, FaAndroid } from "react-icons/fa";
 import Card from "../components/Card/Card";
+import { ThemeContext } from "../context/ThemeContext";
 
 const Services = () => {
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <div className="py-10 bg-black" id="services">
+    <div
+      id="services"
+      className={`py-10 transition-colors duration-300 ${
+        theme === "dark" ? "bg-black text-white" : "bg-white text-black"
+      }`}
+    >
       {/* Section Title */}
       <h2
         className="text-center text-2xl sm:text-4xl md:text-5xl font-bold 

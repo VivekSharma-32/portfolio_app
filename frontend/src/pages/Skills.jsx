@@ -1,9 +1,18 @@
+import { useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 import Card from "../components/Card/Card";
 import skills from "../utils/skills";
 
 const Skills = () => {
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <div className="bg-black text-white py-16" id="skills">
+    <div
+      id="skills"
+      className={`py-16 ${
+        theme === "dark" ? "bg-black text-white" : "bg-white text-black"
+      }`}
+    >
       {/* Section Heading */}
       <h2
         className="text-center text-2xl sm:text-4xl md:text-5xl font-bold 
@@ -18,7 +27,7 @@ const Skills = () => {
         {skills.map((skill, idx) => (
           <Card
             key={idx}
-            icon={<skill.icon size={40} color={skill.color} />} // bigger icons
+            icon={<skill.icon size={40} color={skill.color} />}
             heading={skill.heading}
           />
         ))}

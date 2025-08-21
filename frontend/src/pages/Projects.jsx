@@ -1,8 +1,17 @@
+import { useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 import { ProductCard } from "../components/Card/Card";
 
 const Projects = () => {
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <div className="bg-black text-white py-16" id="projects">
+    <div
+      id="projects"
+      className={`py-16 ${
+        theme === "dark" ? "bg-black text-white" : "bg-white text-black"
+      }`}
+    >
       {/* Section Heading */}
       <h2
         className="text-center text-2xl sm:text-4xl md:text-5xl font-bold 

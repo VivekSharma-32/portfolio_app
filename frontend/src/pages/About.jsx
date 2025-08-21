@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { MdComputer } from "react-icons/md";
 import { motion } from "framer-motion";
+import { ThemeContext } from "../context/ThemeContext"; // adjust path if needed
 
 const About = () => {
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <div className="bg-black text-white py-20 px-6" id="about">
+    <div
+      id="about"
+      className={`py-20 px-6 transition-colors duration-500 ${
+        theme === "dark" ? "bg-black text-white" : "bg-white text-gray-900"
+      }`}
+    >
       <div className="flex flex-col md:flex-row items-center md:justify-between gap-12 max-w-6xl mx-auto">
         {/* LEFT CONTENT */}
         <motion.div
@@ -21,7 +29,11 @@ const About = () => {
           >
             Crafting Code, Creating Impact
           </h2>
-          <p className="text-lg leading-relaxed text-gray-300 text-justify">
+          <p
+            className={`text-lg leading-relaxed text-justify ${
+              theme === "dark" ? "text-gray-300" : "text-gray-700"
+            }`}
+          >
             Hi, I’m{" "}
             <span className="text-yellow-400 font-semibold">Vivek Sharma</span>,
             a <span className="text-teal-400">Full-Stack Developer</span>{" "}
@@ -30,34 +42,32 @@ const About = () => {
           </p>
 
           <div className="mt-6 space-y-4">
-            <p className="flex items-start gap-3">
-              <span className="text-yellow-400 text-xl">✔</span>
-              <span>
-                <span className="font-semibold">Front-End Magic:</span> React,
-                JavaScript (ES6+), HTML5, CSS3, Bootstrap
-              </span>
-            </p>
-            <p className="flex items-start gap-3">
-              <span className="text-yellow-400 text-xl">✔</span>
-              <span>
-                <span className="font-semibold">Back-End Power:</span> Node.js,
-                Express.js, PHP (CodeIgniter, Laravel)
-              </span>
-            </p>
-            <p className="flex items-start gap-3">
-              <span className="text-yellow-400 text-xl">✔</span>
-              <span>
-                <span className="font-semibold">Databases:</span> MySQL,
-                PostgreSQL, MongoDB
-              </span>
-            </p>
-            <p className="flex items-start gap-3">
-              <span className="text-yellow-400 text-xl">✔</span>
-              <span>
-                <span className="font-semibold">Other Skills:</span> Secure
-                coding, REST APIs, Git/GitHub, Cloud deployment
-              </span>
-            </p>
+            {[
+              {
+                title: "Front-End Magic:",
+                text: "React, JavaScript (ES6+), HTML5, CSS3, Bootstrap",
+              },
+              {
+                title: "Back-End Power:",
+                text: "Node.js, Express.js, PHP (CodeIgniter, Laravel)",
+              },
+              {
+                title: "Databases:",
+                text: "MySQL, PostgreSQL, MongoDB",
+              },
+              {
+                title: "Other Skills:",
+                text: "Secure coding, REST APIs, Git/GitHub, Cloud deployment",
+              },
+            ].map((item, idx) => (
+              <p key={idx} className="flex items-start gap-3">
+                <span className="text-yellow-400 text-xl">✔</span>
+                <span>
+                  <span className="font-semibold">{item.title}</span>{" "}
+                  {item.text}
+                </span>
+              </p>
+            ))}
           </div>
 
           {/* Contact Button */}
@@ -89,7 +99,11 @@ const About = () => {
               src="/assets/images/banner/about-banner.avif"
               alt="About"
             />
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center pb-6">
+            <div
+              className="absolute inset-0 rounded-xl bg-gradient-to-t from-black/70 to-transparent 
+                         opacity-0 group-hover:opacity-100 transition-opacity duration-500 
+                         flex items-end justify-center pb-6"
+            >
               <p className="text-yellow-400 text-lg font-semibold italic">
                 “Building experiences, not just applications.”
               </p>

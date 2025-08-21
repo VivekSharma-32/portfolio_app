@@ -1,24 +1,33 @@
 import { FaEnvelope, FaLinkedin, FaPhoneAlt, FaUser } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+import { useTheme } from "../context/ThemeContext"; // import context
 
 const Contact = () => {
+  const { theme } = useTheme(); // get current theme (light/dark)
+
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
   } = useForm();
+
   const onSubmit = (data) => {
     if (data !== "") {
       toast.success("Your message has been submitted successfully.");
       reset();
     }
   };
+
   return (
     <section
-      className="bg-gradient-to-b from-black via-gray-900 to-black text-white py-20"
       id="contact"
+      className={`py-20 transition-colors duration-300 ${
+        theme === "dark"
+          ? "bg-gradient-to-b from-black via-gray-900 to-black text-white"
+          : "bg-gradient-to-b from-gray-100 via-white to-gray-100 text-gray-900"
+      }`}
     >
       {/* Section Heading */}
       <h2
@@ -29,31 +38,47 @@ const Contact = () => {
         Get in Touch
       </h2>
 
-      {/* Main Container: Left (Contacts) + Right (Form) */}
+      {/* Main Container */}
       <div className="max-w-6xl mx-auto px-6 grid gap-12 sm:grid-cols-1 md:grid-cols-2">
-        {/* Left Column: Contact Cards */}
+        {/* Left Column */}
         <div className="grid gap-8">
           {/* Phone */}
-          <div className="flex items-center gap-4 p-5 rounded-2xl bg-gray-800/70 shadow-lg hover:shadow-teal-500/40 transition-all duration-300 hover:scale-105">
-            <div className="p-3 rounded-full bg-teal-500/20 text-teal-400">
+          <div
+            className={`flex items-center gap-4 p-5 rounded-2xl shadow-lg transition-all duration-300 hover:scale-105
+              ${
+                theme === "dark"
+                  ? "bg-gray-800/70 hover:shadow-teal-500/40"
+                  : "bg-white border hover:shadow-teal-300/40"
+              }`}
+          >
+            <div className="p-3 rounded-full bg-teal-500/20 text-teal-500">
               <FaPhoneAlt size={24} />
             </div>
             <div>
               <h3 className="font-semibold text-lg">Phone</h3>
-              <p className="text-gray-300">8493018103 / 6006552260</p>
+              <p className="text-gray-500 dark:text-gray-300">
+                8493018103 / 6006552260
+              </p>
             </div>
           </div>
 
           {/* Email */}
-          <div className="flex items-center gap-4 p-5 rounded-2xl bg-gray-800/70 shadow-lg hover:shadow-red-500/40 transition-all duration-300 hover:scale-105">
-            <div className="p-3 rounded-full bg-red-500/20 text-red-400">
+          <div
+            className={`flex items-center gap-4 p-5 rounded-2xl shadow-lg transition-all duration-300 hover:scale-105
+              ${
+                theme === "dark"
+                  ? "bg-gray-800/70 hover:shadow-red-500/40"
+                  : "bg-white border hover:shadow-red-300/40"
+              }`}
+          >
+            <div className="p-3 rounded-full bg-red-500/20 text-red-500">
               <FaEnvelope size={24} />
             </div>
             <div>
               <h3 className="font-semibold text-lg">Email</h3>
               <a
                 href="mailto:vivek.sharma1275@gmail.com"
-                className="text-gray-300 hover:text-red-400 hover:underline transition-colors"
+                className="hover:underline transition-colors text-gray-500 dark:text-gray-300 hover:text-red-500"
               >
                 vivek.sharma1275@gmail.com
               </a>
@@ -61,8 +86,15 @@ const Contact = () => {
           </div>
 
           {/* LinkedIn */}
-          <div className="flex items-center gap-4 p-5 rounded-2xl bg-gray-800/70 shadow-lg hover:shadow-blue-500/40 transition-all duration-300 hover:scale-105">
-            <div className="p-3 rounded-full bg-blue-500/20 text-blue-400">
+          <div
+            className={`flex items-center gap-4 p-5 rounded-2xl shadow-lg transition-all duration-300 hover:scale-105
+              ${
+                theme === "dark"
+                  ? "bg-gray-800/70 hover:shadow-blue-500/40"
+                  : "bg-white border hover:shadow-blue-300/40"
+              }`}
+          >
+            <div className="p-3 rounded-full bg-blue-500/20 text-blue-500">
               <FaLinkedin size={24} />
             </div>
             <div>
@@ -71,7 +103,7 @@ const Contact = () => {
                 href="https://www.linkedin.com/in/vivek-sharma-737672160/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-blue-400 hover:underline transition-colors"
+                className="hover:underline transition-colors text-gray-500 dark:text-gray-300 hover:text-blue-500"
               >
                 Vivek Sharma
               </a>
@@ -79,24 +111,31 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Right Column: Contact Form */}
+        {/* Right Column: Form */}
         <div>
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="grid gap-6 bg-gray-800/60 p-8 rounded-2xl shadow-lg"
+            className={`grid gap-6 p-8 rounded-2xl shadow-lg transition-colors duration-300
+              ${theme === "dark" ? "bg-gray-800/60" : "bg-white border"}`}
             autoComplete="off"
           >
-            {/* Row 1: Name + Email */}
+            {/* Row 1 */}
             <div className="grid md:grid-cols-2 gap-6">
               {/* Name */}
               <div>
                 <label className="block mb-2 font-medium">Name</label>
-                <div className="flex items-center bg-gray-900 rounded-lg px-3">
+                <div
+                  className={`flex items-center rounded-lg px-3 ${
+                    theme === "dark"
+                      ? "bg-gray-900"
+                      : "bg-gray-100 border border-gray-300"
+                  }`}
+                >
                   <FaUser className="text-gray-400 mr-2" />
                   <input
                     type="text"
                     placeholder="Enter your name"
-                    className="w-full bg-transparent outline-none py-2 text-white placeholder-gray-400"
+                    className="w-full bg-transparent outline-none py-2 text-inherit placeholder-gray-400"
                     {...register("name", { required: "Name is required" })}
                   />
                 </div>
@@ -110,12 +149,18 @@ const Contact = () => {
               {/* Email */}
               <div>
                 <label className="block mb-2 font-medium">Email</label>
-                <div className="flex items-center bg-gray-900 rounded-lg px-3">
+                <div
+                  className={`flex items-center rounded-lg px-3 ${
+                    theme === "dark"
+                      ? "bg-gray-900"
+                      : "bg-gray-100 border border-gray-300"
+                  }`}
+                >
                   <FaEnvelope className="text-gray-400 mr-2" />
                   <input
                     type="email"
                     placeholder="Enter your email"
-                    className="w-full bg-transparent outline-none py-2 text-white placeholder-gray-400"
+                    className="w-full bg-transparent outline-none py-2 text-inherit placeholder-gray-400"
                     {...register("email", {
                       required: "Email is required",
                       pattern: {
@@ -136,13 +181,19 @@ const Contact = () => {
             {/* Mobile */}
             <div>
               <label className="block mb-2 font-medium">Mobile</label>
-              <div className="flex items-center bg-gray-900 rounded-lg px-3">
+              <div
+                className={`flex items-center rounded-lg px-3 ${
+                  theme === "dark"
+                    ? "bg-gray-900"
+                    : "bg-gray-100 border border-gray-300"
+                }`}
+              >
                 <FaPhoneAlt className="text-gray-400 mr-2" />
                 <input
                   type="tel"
                   placeholder="Enter your mobile number"
                   maxLength={10}
-                  className="w-full bg-transparent outline-none py-2 text-white placeholder-gray-400"
+                  className="w-full bg-transparent outline-none py-2 text-inherit placeholder-gray-400"
                   {...register("mobile", {
                     required: "Mobile Number is required",
                     pattern: {
@@ -165,7 +216,12 @@ const Contact = () => {
               <textarea
                 rows="5"
                 placeholder="Write your message..."
-                className="w-full bg-gray-900 rounded-lg p-3 text-white placeholder-gray-400 outline-none resize-none"
+                className={`w-full rounded-lg p-3 outline-none resize-none placeholder-gray-400
+                  ${
+                    theme === "dark"
+                      ? "bg-gray-900 text-white"
+                      : "bg-gray-100 text-black border border-gray-300"
+                  }`}
                 {...register("msg", { required: "Message is required" })}
               ></textarea>
               {errors.msg && (
@@ -175,7 +231,7 @@ const Contact = () => {
               )}
             </div>
 
-            {/* Submit Button */}
+            {/* Submit */}
             <button
               type="submit"
               className="w-full sm:w-auto px-6 py-3 rounded-full font-semibold 
