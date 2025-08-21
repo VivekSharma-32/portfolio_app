@@ -88,21 +88,24 @@ const Header = () => {
 
         {/* Content */}
         <h1 className="relative z-10 text-2xl sm:text-4xl md:text-5xl flex flex-col items-center gap-4">
-          <span className="flex items-center gap-2">Hello,</span>
           <TypeAnimation
             sequence={[
-              "Full-Stack Developer",
-              1000,
-              "Frontend Developer",
-              1000,
-              "Backend Developer",
-              1000,
-              "Software Developer",
-              1000,
+              "Hi, I'm Vivek Sharma 👋",
+              2000,
+              "Full-Stack Developer 💻",
+              2000,
+              "Building Modern Web Apps 🚀",
+              2000,
+              "Frontend & Backend Enthusiast ⚡",
+              2000,
+              "React, Node.js & Cloud Lover ☁️",
+              2000,
+              "Passionate About Problem Solving 🧩",
+              2000,
             ]}
             speed={50}
             wrapper="div"
-            className="text-white"
+            className="text-white text-2xl sm:text-4xl md:text-5xl font-bold"
             repeat={Infinity}
           />
         </h1>
