@@ -8,7 +8,7 @@ const Skills = () => {
       <h2 className="text-3xl text-center mb-10 font-bold italic">Skills</h2>
 
       {/* Skills Grid */}
-      <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 px-5">
+      <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
         {skills.map((skill, idx) => (
           <Card
             key={idx}

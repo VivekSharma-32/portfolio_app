@@ -9,7 +9,7 @@ const Projects = () => {
       </h2>
 
       {/* Projects Grid */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-5">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <ProductCard
           imgUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFXMVsqeqstL0GCNxoVwhjfqmumLoghY4ywQ&s"
           heading="E-commerce Project"
