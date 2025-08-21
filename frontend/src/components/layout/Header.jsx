@@ -87,7 +87,7 @@ const Header = () => {
         <div className="absolute inset-0 bg-black/50"></div>
 
         {/* Content */}
-        <h1 className="relative z-10 text-2xl sm:text-4xl md:text-5xl flex flex-col items-center gap-4">
+        <h1 className="relative z-10 text-2xl sm:text-4xl md:text-5xl flex flex-col items-center gap-4 not-italic">
           <TypeAnimation
             sequence={[
               "Hi, I'm Vivek Sharma 👋",
