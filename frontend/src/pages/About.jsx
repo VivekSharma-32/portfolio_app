@@ -10,7 +10,7 @@ const About = () => {
           <h1 className="text-3xl font-bold border-b-2 border-yellow-500 pb-2 mb-5 italic flex items-center gap-2 justify-center md:justify-start">
             <MdComputer /> About Me
           </h1>
-          <p className="text-justify text-lg leading-relaxed italic">
+          <p className="text-justify text-lg leading-relaxed italic text-sm">
             I am a Computer Science graduate with over 4.5 years of hands-on
             experience in software development, specializing in full-stack web
             application design and implementation. My expertise includes
