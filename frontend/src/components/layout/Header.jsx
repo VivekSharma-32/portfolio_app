@@ -110,10 +110,10 @@ const Header = () => {
               2000,
             ]}
             speed={50}
-            wrapper="div"
+            wrapper="span"
             className="text-2xl sm:text-4xl md:text-5xl font-bold 
              bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 
-             bg-clip-text text-transparent"
+             bg-clip-text text-transparent h-auto"
             repeat={Infinity}
           />
         </h1>
