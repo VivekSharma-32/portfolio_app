@@ -1,10 +1,4 @@
-import {
-  FaEnvelope,
-  FaLinkedin,
-  FaPhoneAlt,
-  FaUser,
-  FaPaperPlane,
-} from "react-icons/fa";
+import { FaEnvelope, FaLinkedin, FaPhoneAlt, FaUser } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 
@@ -184,9 +178,20 @@ const Contact = () => {
             {/* Submit Button */}
             <button
               type="submit"
-              className="flex items-center justify-center gap-2 bg-teal-500 hover:bg-teal-600 text-white font-semibold py-3 rounded-lg transition-colors duration-300 cursor-pointer"
+              className="w-full sm:w-auto px-6 py-3 rounded-full font-semibold 
+             bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 
+             shadow-sm transition-all duration-300 
+             hover:shadow-yellow-400/50 hover:scale-102 
+             flex items-center justify-center gap-2 cursor-pointer"
             >
-              <FaPaperPlane /> Send Message
+              <span
+                className="bg-clip-text text-transparent 
+                   bg-gradient-to-r from-black via-gray-800 to-black 
+                   group-hover:from-white group-hover:via-yellow-200 group-hover:to-white 
+                   transition-all duration-300"
+              >
+                Send Message
+              </span>
             </button>
           </form>
         </div>

@@ -14,7 +14,7 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="bg-black text-white">
+    <div className="bg-gradient-to-r from-black via-gray-900 to-black text-white">
       {/* HEADER TOP */}
       <div className="flex items-center justify-between w-full px-6 py-4">
         {/* LOGO */}
@@ -25,7 +25,7 @@ const Header = () => {
         />
 
         {/* NAVIGATION DESKTOP */}
-        <nav className="hidden md:block bg-gray-600 w-auto py-3 rounded-md shadow-md">
+        <nav className="hidden md:block bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 w-auto py-3 px-4 rounded-xl shadow-md">
           <ul className="flex items-center gap-6">
             {navigation.map(
               (item) =>
@@ -35,7 +35,9 @@ const Header = () => {
                       href={item.link}
                       className="font-medium px-6 py-3 rounded-md 
                         transition-all duration-300 ease-in-out 
-                        hover:bg-gray-500 hover:text-yellow-400"
+                        bg-clip-text text-transparent 
+                        bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500
+                        hover:scale-105 hover:shadow-lg"
                     >
                       {item.name}
                     </a>
@@ -56,7 +58,8 @@ const Header = () => {
 
       {/* MOBILE MENU */}
       <nav
-        className={`md:hidden bg-gray-900 transition-all duration-500 ease-in-out overflow-hidden
+        className={`md:hidden bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 
+        transition-all duration-500 ease-in-out overflow-hidden
         ${menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}
       >
         <ul className="flex flex-col items-center gap-4 py-4">
@@ -67,8 +70,10 @@ const Header = () => {
                   <a
                     href={item.link}
                     className="font-medium block px-4 py-2 rounded-md 
+                      bg-clip-text text-transparent 
+                      bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500
                       transition-all duration-300 ease-in-out 
-                      hover:bg-gray-800 hover:text-teal-300"
+                      hover:scale-110"
                   >
                     {item.name}
                   </a>
@@ -84,7 +89,7 @@ const Header = () => {
           text-center text-white italic
           bg-[url(/assets/images/banner/coder.avif)] bg-top sm:bg-center bg-no-repeat bg-cover"
       >
-        {/* Overlay for better text visibility */}
+        {/* Overlay */}
         <div className="absolute inset-0 bg-black/60"></div>
 
         {/* Content */}
