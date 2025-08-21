@@ -110,24 +110,27 @@ const Header = () => {
           <TypeAnimation
             sequence={[
               "Hi, I'm Vivek Sharma",
-              2000,
+              1000,
               "Full-Stack Developer",
-              2000,
+              1000,
               "Building Modern Web Apps",
-              2000,
+              1000,
               "Frontend & Backend Enthusiast",
-              2000,
+              1000,
               "React, Node.js & Cloud Lover",
-              2000,
+              1000,
               "Passionate About Problem Solving ",
-              2000,
+              1000,
             ]}
             speed={50}
+            repeat={Infinity}
             wrapper="div"
             className="text-2xl sm:text-4xl md:text-5xl font-bold 
              bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 
-             bg-clip-text text-transparent"
-            repeat={Infinity}
+             bg-clip-text text-transparent 
+             block max-w-[100%] sm:max-w-[80%] md:max-w-3xl 
+             mx-auto whitespace-pre-line break-words text-center
+             h-[4rem] sm:h-[5rem] md:h-[6rem] flex items-center justify-center"
           />
         </h1>
       </div>
