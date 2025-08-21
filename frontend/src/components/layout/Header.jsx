@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { FaCode } from "react-icons/fa";
-import { TypeAnimation } from "react-type-animation";
 import { HiMenu, HiX } from "react-icons/hi"; // Hamburger & Close icons
-import { PiHandWavingFill } from "react-icons/pi";
+import { TypeAnimation } from "react-type-animation";
+
 const navigation = [
   { id: 1, name: "About", active: "yes", link: "#about" },
   { id: 2, name: "Services", active: "yes", link: "#services" },
@@ -17,7 +16,7 @@ const Header = () => {
   return (
     <div className="bg-black text-white">
       {/* HEADER TOP */}
-      <div className="flex items-center justify-between w-full border-b border-yellow-50 mb-1 p-5">
+      <div className="flex items-center justify-between w-full px-6 py-4">
         {/* LOGO */}
         <img
           src="/assets/images/white.jpg"
@@ -26,15 +25,17 @@ const Header = () => {
         />
 
         {/* NAVIGATION DESKTOP */}
-        <nav className="hidden md:block">
-          <ul className="flex gap-10">
+        <nav className="hidden md:block bg-gray-900 w-auto py-3 rounded-md shadow-md">
+          <ul className="flex items-center gap-6">
             {navigation.map(
               (item) =>
                 item.active === "yes" && (
                   <li key={item.id}>
                     <a
                       href={item.link}
-                      className="italic font-medium hover:underline hover:not-italic"
+                      className="font-medium px-5 py-3 rounded-md 
+                        transition-all duration-300 ease-in-out 
+                        hover:bg-gray-600 hover:text-teal-400"
                     >
                       {item.name}
                     </a>
@@ -53,10 +54,9 @@ const Header = () => {
         </button>
       </div>
 
-      {/* MOBILE MENU (Animated) */}
+      {/* MOBILE MENU */}
       <nav
-        className={`md:hidden bg-black border-b border-yellow-50 
-        transition-all duration-500 ease-in-out overflow-hidden
+        className={`md:hidden bg-gray-900 transition-all duration-500 ease-in-out overflow-hidden
         ${menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}
       >
         <ul className="flex flex-col items-center gap-4 py-4">
@@ -66,8 +66,9 @@ const Header = () => {
                 <li key={item.id}>
                   <a
                     href={item.link}
-                    className="italic font-medium hover:underline hover:not-italic text-lg"
-                    onClick={() => setMenuOpen(false)} // close menu on click
+                    className="font-medium block px-4 py-2 rounded-md 
+                      transition-all duration-300 ease-in-out 
+                      hover:bg-gray-800 hover:text-teal-300"
                   >
                     {item.name}
                   </a>
@@ -80,14 +81,14 @@ const Header = () => {
       {/* HERO SECTION */}
       <div
         className="relative min-h-[30vh] sm:min-h-[80vh] md:min-h-screen flex items-center justify-center 
-    font-bold text-center text-white italic
-    bg-[url(/assets/images/banner/coder.avif)] bg-top sm:bg-center bg-no-repeat bg-cover"
+          text-center text-white italic
+          bg-[url(/assets/images/banner/coder.avif)] bg-top sm:bg-center bg-no-repeat bg-cover"
       >
         {/* Overlay for better text visibility */}
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/60"></div>
 
         {/* Content */}
-        <h1 className="relative z-10 text-2xl sm:text-4xl md:text-5xl flex flex-col items-center gap-4 not-italic">
+        <h1 className="relative z-10 text-2xl sm:text-4xl md:text-5xl font-bold not-italic">
           <TypeAnimation
             sequence={[
               "Hi, I'm Vivek Sharma 👋",

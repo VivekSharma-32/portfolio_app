@@ -4,3 +4,28 @@
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
+
+@keyframes rotate-border {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.nav-hover-border::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid #facc15; /* yellow border */
+  border-radius: 0.375rem; /* same as rounded-md */
+  transform: rotate(0deg);
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+
+.nav-hover-border:hover::after {
+  opacity: 1;
+  animation: rotate-border 1s linear infinite;
+}

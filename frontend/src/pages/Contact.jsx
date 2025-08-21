@@ -86,7 +86,7 @@ const Contact = () => {
           <form
             onSubmit={handleSubmit(onSubmit)}
             className="grid gap-6 bg-gray-800/60 p-8 rounded-2xl shadow-lg"
-            autocomplete="off"
+            autoComplete="off"
           >
             {/* Row 1: Name + Email */}
             <div className="grid md:grid-cols-2 gap-6">

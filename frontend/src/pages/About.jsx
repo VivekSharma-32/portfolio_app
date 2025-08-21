@@ -30,7 +30,7 @@ const About = () => {
         <div className="md:basis-1/2 flex justify-center">
           <img
             className="w-full max-w-md rounded-xl shadow-lg"
-            src="https://t4.ftcdn.net/jpg/01/80/58/87/360_F_180588791_fchL6FWwOB1Vl9QngsKgzz6kIxVffayA.jpg"
+            src="/assets/images/banner/about-banner.avif"
             alt="About"
           />
         </div>
