@@ -79,13 +79,18 @@ const Header = () => {
 
       {/* HERO SECTION */}
       <div
-        className="min-h-[30vh] sm:min-h-[80vh] md:min-h-screen flex items-center justify-center 
-        font-bold text-center bg-black text-white italic 
-        bg-[url(https://img.freepik.com/premium-photo/creative-desktop-wallpaper_941097-67554.jpg)] 
-        bg-top sm:bg-center bg-no-repeat bg-cover relative"
+        className="relative min-h-[30vh] sm:min-h-[80vh] md:min-h-screen flex items-center justify-center 
+    font-bold text-center text-white italic
+    bg-[url(/assets/images/banner/coder.avif)] bg-top sm:bg-center bg-no-repeat bg-cover"
       >
-        <h1 className="absolute left-0 right-0 text-2xl sm:text-4xl md:text-5xl w-full">
-          Hello,
+        {/* Overlay for better text visibility */}
+        <div className="absolute inset-0 bg-black/50"></div>
+
+        {/* Content */}
+        <h1 className="relative z-10 text-2xl sm:text-4xl md:text-5xl flex flex-col items-center gap-4">
+          <span className="flex items-center gap-2">
+            Hello <PiHandWavingFill className="text-yellow-400 animate-wave" />
+          </span>
           <TypeAnimation
             sequence={[
               "Full-Stack Developer",
