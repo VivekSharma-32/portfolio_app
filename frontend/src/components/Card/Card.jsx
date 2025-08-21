@@ -11,7 +11,7 @@ const Card = ({ icon, heading, content, height }) => {
       <div className="mb-2">{icon}</div>
       <div>
         <h2 className="text-xl text-center mb-1 font-bold">{heading}</h2>
-        <p className="text-sm mb-2">{content}</p>
+        <p className="text-justify text-sm py-2">{content}</p>
       </div>
     </div>
   );
@@ -34,7 +34,7 @@ export const ProductCard = ({ heading, content, imgUrl }) => {
       </div>
       <div className="text-center px-5 pt-2">
         <h2 className="text-xl text-center mb-1 font-bold">{heading}</h2>
-        <p className="text-justify text-sm mb-2">{content}</p>
+        <p className="text-justify text-sm py-2">{content}</p>
       </div>
     </div>
   );
