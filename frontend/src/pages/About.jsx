@@ -14,8 +14,12 @@ const About = () => {
           viewport={{ once: true }}
           className="md:basis-1/2"
         >
-          <h2 className="text-4xl font-extrabold text-yellow-400 italic mb-6 text-center md:text-left">
-            Crafting Code, Creating Impact 🚀
+          <h2
+            className="text-2xl sm:text-4xl md:text-5xl font-bold 
+             bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 
+             bg-clip-text text-transparent mb-10"
+          >
+            Crafting Code, Creating Impact
           </h2>
           <p className="text-lg leading-relaxed text-gray-300 text-justify">
             Hi, I’m{" "}
@@ -65,7 +69,7 @@ const About = () => {
                          hover:shadow-yellow-400/50 hover:scale-105 hover:text-white
                          relative overflow-hidden group"
             >
-              <span className="relative z-10">📩 Let’s Connect</span>
+              <span className="relative z-10">Let’s Connect</span>
               <span className="absolute inset-0 bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 opacity-0 group-hover:opacity-100 transition duration-500"></span>
             </a>
           </div>

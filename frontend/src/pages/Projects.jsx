@@ -4,7 +4,11 @@ const Projects = () => {
   return (
     <div className="bg-black text-white py-16" id="projects">
       {/* Section Heading */}
-      <h2 className="text-3xl text-center mb-10 font-bold italic">
+      <h2
+        className="text-center text-2xl sm:text-4xl md:text-5xl font-bold 
+             bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 
+             bg-clip-text text-transparent mb-10"
+      >
         Recent Projects
       </h2>
 

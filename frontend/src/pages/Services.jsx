@@ -6,7 +6,11 @@ const Services = () => {
   return (
     <div className="py-10 bg-black" id="services">
       {/* Section Title */}
-      <h2 className="text-white text-3xl text-center mb-10 font-bold italic">
+      <h2
+        className="text-center text-2xl sm:text-4xl md:text-5xl font-bold 
+             bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 
+             bg-clip-text text-transparent mb-10"
+      >
         Services
       </h2>
 

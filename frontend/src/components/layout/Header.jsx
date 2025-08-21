@@ -35,7 +35,7 @@ const Header = () => {
                       href={item.link}
                       className="font-medium px-6 py-3 rounded-md 
                         transition-all duration-300 ease-in-out 
-                        hover:bg-gray-500 hover:text-teal-400"
+                        hover:bg-gray-500 hover:text-yellow-400"
                     >
                       {item.name}
                     </a>
@@ -91,13 +91,13 @@ const Header = () => {
         <h1 className="relative z-10 text-2xl sm:text-4xl md:text-5xl font-bold not-italic">
           <TypeAnimation
             sequence={[
-              "Hi, I'm Vivek Sharma 👋",
+              "Hi, I'm Vivek Sharma",
               2000,
-              "Full-Stack Developer 💻",
+              "Full-Stack Developer",
               2000,
-              "Building Modern Web Apps 🚀",
+              "Building Modern Web Apps",
               2000,
-              "Frontend & Backend Enthusiast ⚡",
+              "Frontend & Backend Enthusiast",
               2000,
               "React, Node.js & Cloud Lover",
               2000,
@@ -106,7 +106,9 @@ const Header = () => {
             ]}
             speed={50}
             wrapper="div"
-            className="text-white text-2xl sm:text-4xl md:text-5xl font-bold"
+            className="text-2xl sm:text-4xl md:text-5xl font-bold 
+             bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 
+             bg-clip-text text-transparent"
             repeat={Infinity}
           />
         </h1>
