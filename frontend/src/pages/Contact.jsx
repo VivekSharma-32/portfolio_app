@@ -7,6 +7,7 @@ import {
   FaPaperPlane,
 } from "react-icons/fa";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 const Contact = () => {
   const {
@@ -15,8 +16,11 @@ const Contact = () => {
     reset,
     formState: { errors },
   } = useForm();
-  const onSubmit = (e) => {
-    e.preventDefault();
+  const onSubmit = (data) => {
+    if (data !== "") {
+      toast.success("Your message has been submitted successfully.");
+      reset();
+    }
   };
   return (
     <section
@@ -83,6 +87,7 @@ const Contact = () => {
           <form
             onSubmit={handleSubmit(onSubmit)}
             className="grid gap-6 bg-gray-800/60 p-8 rounded-2xl shadow-lg"
+            autocomplete="off"
           >
             {/* Row 1: Name + Email */}
             <div className="grid md:grid-cols-2 gap-6">
