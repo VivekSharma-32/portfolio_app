@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FaCode } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
 import { HiMenu, HiX } from "react-icons/hi"; // Hamburger & Close icons
-
+import { PiHandWavingFill } from "react-icons/pi";
 const navigation = [
   { id: 1, name: "About", active: "yes", link: "#about" },
   { id: 2, name: "Services", active: "yes", link: "#services" },
@@ -84,7 +84,8 @@ const Header = () => {
         bg-[url(https://img.freepik.com/premium-photo/creative-desktop-wallpaper_941097-67554.jpg)] 
         bg-top sm:bg-center bg-no-repeat bg-cover relative"
       >
-        <h1 className="absolute left-0 md:left-10 text-2xl sm:text-4xl md:text-5xl w-full md:w-[50%] p-4">
+        <h1 className="absolute left-0 right-0 text-2xl sm:text-4xl md:text-5xl w-full">
+          Hello,
           <TypeAnimation
             sequence={[
               "Full-Stack Developer",
@@ -93,7 +94,7 @@ const Header = () => {
               1000,
               "Backend Developer",
               1000,
-              "Programmer",
+              "Software Developer",
               1000,
             ]}
             speed={50}
