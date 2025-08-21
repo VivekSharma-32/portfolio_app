@@ -21,7 +21,7 @@ const Header = () => {
         <img
           src="/assets/images/white.jpg"
           alt="Logo"
-          className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain border rounded-sm p-1 hover:shadow-xl hover:shadow-teal-500/20 hover:border-teal-400 cursor-pointer"
+          className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain p-1 cursor-pointer"
         />
 
         {/* NAVIGATION DESKTOP */}
@@ -99,9 +99,9 @@ const Header = () => {
               2000,
               "Frontend & Backend Enthusiast ⚡",
               2000,
-              "React, Node.js & Cloud Lover ☁️",
+              "React, Node.js & Cloud Lover",
               2000,
-              "Passionate About Problem Solving 🧩",
+              "Passionate About Problem Solving ",
               2000,
             ]}
             speed={50}
