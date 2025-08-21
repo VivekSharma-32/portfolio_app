@@ -25,7 +25,7 @@ const Header = () => {
         />
 
         {/* NAVIGATION DESKTOP */}
-        <nav className="hidden md:block bg-gray-900 w-auto py-3 rounded-md shadow-md">
+        <nav className="hidden md:block bg-gray-600 w-auto py-3 rounded-md shadow-md">
           <ul className="flex items-center gap-6">
             {navigation.map(
               (item) =>
@@ -33,9 +33,9 @@ const Header = () => {
                   <li key={item.id}>
                     <a
                       href={item.link}
-                      className="font-medium px-5 py-3 rounded-md 
+                      className="font-medium px-6 py-3 rounded-md 
                         transition-all duration-300 ease-in-out 
-                        hover:bg-gray-600 hover:text-teal-400"
+                        hover:bg-gray-500 hover:text-teal-400"
                     >
                       {item.name}
                     </a>
