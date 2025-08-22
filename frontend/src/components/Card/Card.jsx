@@ -7,8 +7,7 @@ const Card = ({ icon, heading, content, height }) => {
   return (
     <div
       className={`p-5 shadow-sm flex flex-col items-center max-w-sm p-6 rounded-xl shadow-md border-1 ${height}
-                  transition-transform duration-300 ease-in-out 
-                  hover:scale-105 hover:shadow-xl hover:shadow-teal-500/30 hover:border-teal-400
+                  transition-transform duration-300 ease-in-out hover:shadow-xl hover:shadow-teal-500/30 hover:border-teal-400
                   ${
                     theme === "dark"
                       ? "bg-transparent text-white border-gray-700"

@@ -1,10 +1,16 @@
 import { useContext } from "react";
+import { motion, useAnimation } from "framer-motion";
 import { ThemeContext } from "../context/ThemeContext";
 import Card from "../components/Card/Card";
 import skills from "../utils/skills";
 
 const Skills = () => {
   const { theme } = useContext(ThemeContext);
+
+  // Calculate the total width for sliding (number of cards * card width + gap)
+  const cardWidth = 240; // same as w-60 in px
+  const gap = 24; // Tailwind gap-6 in px
+  const totalWidth = skills.length * (cardWidth + gap);
 
   return (
     <div
@@ -22,15 +28,29 @@ const Skills = () => {
         Skills
       </h2>
 
-      {/* Skills Grid */}
-      <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
-        {skills.map((skill, idx) => (
-          <Card
-            key={idx}
-            icon={<skill.icon size={40} color={skill.color} />}
-            heading={skill.heading}
-          />
-        ))}
+      {/* Auto Sliding Carousel */}
+      <div className="overflow-hidden">
+        <motion.div
+          className="flex gap-6"
+          animate={{ x: [0, -totalWidth / 2] }} // move right → left
+          transition={{
+            x: {
+              repeat: Infinity,
+              repeatType: "loop",
+              duration: 20,
+              ease: "linear",
+            },
+          }}
+        >
+          {skills.concat(skills).map((skill, idx) => (
+            <motion.div key={idx} className="flex-shrink-0 w-60">
+              <Card
+                icon={<skill.icon size={40} color={skill.color} />}
+                heading={skill.heading}
+              />
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </div>
   );
