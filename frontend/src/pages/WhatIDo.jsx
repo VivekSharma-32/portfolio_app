@@ -1,14 +1,14 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { FaConnectdevelop, FaCode, FaAndroid } from "react-icons/fa";
 import Card from "../components/Card/Card";
 import { ThemeContext } from "../context/ThemeContext";
 
-const Services = () => {
+const WhatIDo = () => {
   const { theme } = useContext(ThemeContext);
 
   return (
     <div
-      id="services"
+      id="whatido"
       className={`py-10 transition-colors duration-300 ${
         theme === "dark" ? "bg-black text-white" : "bg-white text-black"
       }`}
@@ -19,7 +19,7 @@ const Services = () => {
              bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 
              bg-clip-text text-transparent mb-10"
       >
-        Services
+        What I Do
       </h2>
 
       {/* Cards Grid */}
@@ -44,4 +44,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default WhatIDo;

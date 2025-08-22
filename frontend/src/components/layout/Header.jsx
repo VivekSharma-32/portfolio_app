@@ -6,10 +6,10 @@ import { useTheme } from "../../context/ThemeContext";
 
 const navigation = [
   { id: 1, name: "About", active: "yes", link: "#about" },
-  { id: 2, name: "Services", active: "yes", link: "#services" },
+  { id: 2, name: "What I Do", active: "yes", link: "#whatido" },
   { id: 3, name: "Projects", active: "yes", link: "#projects" },
   { id: 4, name: "Skills", active: "yes", link: "#skills" },
-  { id: 5, name: "Contact", active: "yes", link: "#contact" },
+  { id: 5, name: "Hire Me", active: "yes", link: "#hireme" },
 ];
 
 const Header = () => {

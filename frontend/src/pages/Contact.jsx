@@ -22,7 +22,7 @@ const Contact = () => {
 
   return (
     <section
-      id="contact"
+      id="hireme"
       className={`py-20 transition-colors duration-300 ${
         theme === "dark"
           ? "bg-gradient-to-b from-black via-gray-900 to-black text-white"
@@ -35,7 +35,7 @@ const Contact = () => {
              bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 
              bg-clip-text text-transparent mb-10"
       >
-        Get in Touch
+        Hire Me
       </h2>
 
       {/* Main Container */}
