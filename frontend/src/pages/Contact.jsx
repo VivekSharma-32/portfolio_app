@@ -1,10 +1,10 @@
 import { FaEnvelope, FaLinkedin, FaPhoneAlt, FaUser } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
-import { useTheme } from "../context/ThemeContext"; // import context
+import { useTheme } from "../context/ThemeContext";
 
 const Contact = () => {
-  const { theme } = useTheme(); // get current theme (light/dark)
+  const { theme } = useTheme();
 
   const {
     register,
@@ -39,22 +39,22 @@ const Contact = () => {
       </h2>
 
       {/* Main Container */}
-      <div className="max-w-6xl mx-auto px-6 grid gap-12 sm:grid-cols-1 md:grid-cols-2">
-        {/* Left Column */}
-        <div className="grid gap-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-10 sm:grid-cols-1 md:grid-cols-2">
+        {/* Left Column: Cards */}
+        <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-1">
           {/* Phone */}
           <div
-            className={`flex items-center gap-4 p-5 rounded-2xl shadow-lg transition-all duration-300 hover:scale-105
+            className={`flex flex-col sm:flex-row items-center sm:items-start gap-4 p-5 rounded-2xl shadow-lg transition-all duration-300 hover:scale-105
               ${
                 theme === "dark"
                   ? "bg-gray-800/70 hover:shadow-teal-500/40"
                   : "bg-white border hover:shadow-teal-300/40"
               }`}
           >
-            <div className="p-3 rounded-full bg-teal-500/20 text-teal-500">
+            <div className="p-3 rounded-full bg-teal-500/20 text-teal-500 shrink-0">
               <FaPhoneAlt size={24} />
             </div>
-            <div>
+            <div className="text-center sm:text-left">
               <h3 className="font-semibold text-lg">Phone</h3>
               <p className="text-gray-500 dark:text-gray-300">
                 8493018103 / 6006552260
@@ -64,17 +64,17 @@ const Contact = () => {
 
           {/* Email */}
           <div
-            className={`flex items-center gap-4 p-5 rounded-2xl shadow-lg transition-all duration-300 hover:scale-105
+            className={`flex flex-col sm:flex-row items-center sm:items-start gap-4 p-5 rounded-2xl shadow-lg transition-all duration-300 hover:scale-105
               ${
                 theme === "dark"
                   ? "bg-gray-800/70 hover:shadow-red-500/40"
                   : "bg-white border hover:shadow-red-300/40"
               }`}
           >
-            <div className="p-3 rounded-full bg-red-500/20 text-red-500">
+            <div className="p-3 rounded-full bg-red-500/20 text-red-500 shrink-0">
               <FaEnvelope size={24} />
             </div>
-            <div>
+            <div className="text-center sm:text-left">
               <h3 className="font-semibold text-lg">Email</h3>
               <a
                 href="mailto:vivek.sharma1275@gmail.com"
@@ -87,17 +87,17 @@ const Contact = () => {
 
           {/* LinkedIn */}
           <div
-            className={`flex items-center gap-4 p-5 rounded-2xl shadow-lg transition-all duration-300 hover:scale-105
+            className={`flex flex-col sm:flex-row items-center sm:items-start gap-4 p-5 rounded-2xl shadow-lg transition-all duration-300 hover:scale-105
               ${
                 theme === "dark"
                   ? "bg-gray-800/70 hover:shadow-blue-500/40"
                   : "bg-white border hover:shadow-blue-300/40"
               }`}
           >
-            <div className="p-3 rounded-full bg-blue-500/20 text-blue-500">
+            <div className="p-3 rounded-full bg-blue-500/20 text-blue-500 shrink-0">
               <FaLinkedin size={24} />
             </div>
-            <div>
+            <div className="text-center sm:text-left">
               <h3 className="font-semibold text-lg">LinkedIn</h3>
               <a
                 href="https://www.linkedin.com/in/vivek-sharma-737672160/"
@@ -115,12 +115,12 @@ const Contact = () => {
         <div>
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className={`grid gap-6 p-8 rounded-2xl shadow-lg transition-colors duration-300
+            className={`grid gap-6 p-6 sm:p-8 rounded-2xl shadow-lg transition-colors duration-300
               ${theme === "dark" ? "bg-gray-800/60" : "bg-white border"}`}
             autoComplete="off"
           >
-            {/* Row 1 */}
-            <div className="grid md:grid-cols-2 gap-6">
+            {/* Row 1: Name & Email */}
+            <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
               {/* Name */}
               <div>
                 <label className="block mb-2 font-medium">Name</label>
@@ -236,18 +236,10 @@ const Contact = () => {
               type="submit"
               className="w-full sm:w-auto px-6 py-3 rounded-full font-semibold 
              bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 
-             shadow-sm transition-all duration-300 
-             hover:shadow-yellow-400/50 hover:scale-102 
+             shadow-sm transition-all duration-300 hover:shadow-yellow-400/50 hover:scale-102 
              flex items-center justify-center gap-2 cursor-pointer"
             >
-              <span
-                className="bg-clip-text text-transparent 
-                   bg-gradient-to-r from-black via-gray-800 to-black 
-                   group-hover:from-white group-hover:via-yellow-200 group-hover:to-white 
-                   transition-all duration-300"
-              >
-                Send Message
-              </span>
+              Send Message
             </button>
           </form>
         </div>

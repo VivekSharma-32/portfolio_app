@@ -23,7 +23,7 @@ const Header = () => {
       }`}
     >
       {/* HEADER TOP */}
-      <div className="flex items-center justify-between w-full px-6 py-4">
+      <div className="flex items-center justify-between w-full px-4 sm:px-6 md:px-10 py-3 sm:py-4">
         {/* LOGO */}
         <img
           src={
@@ -32,13 +32,13 @@ const Header = () => {
               : "/assets/images/black.jpg"
           }
           alt="Logo"
-          className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain p-1 cursor-pointer"
+          className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto object-contain cursor-pointer"
         />
 
         {/* NAVIGATION DESKTOP */}
         <nav className="hidden md:flex flex-1 justify-center">
           <ul
-            className={`flex items-center gap-6 py-3 px-6 rounded-md ${
+            className={`flex items-center gap-6 py-2 px-6 rounded-md ${
               theme === "dark" ? "bg-gray-900" : "bg-gray-100 shadow-md"
             }`}
           >
@@ -48,7 +48,7 @@ const Header = () => {
                   <li key={item.id}>
                     <a
                       href={item.link}
-                      className={`font-medium px-6 py-2 rounded-md transition-all duration-300 ease-in-out 
+                      className={`font-medium px-4 sm:px-6 py-2 rounded-md transition-all duration-300 ease-in-out 
                         ${
                           theme === "dark"
                             ? "hover:bg-gray-700 hover:text-yellow-400"
@@ -63,21 +63,32 @@ const Header = () => {
           </ul>
         </nav>
 
-        {/* DARK/LIGHT MODE BUTTON */}
-        <button
-          className="hidden md:flex text-2xl ml-4 p-2 rounded-full transition-all duration-300 ease-in-out hover:bg-gray-300/20"
-          onClick={toggleTheme}
-        >
-          {theme === "dark" ? <BsSunFill /> : <BsMoonStarsFill />}
-        </button>
+        {/* MOBILE + THEME BUTTON */}
+        <div className="flex items-center gap-2">
+          {/* DARK/LIGHT MODE BUTTON (Desktop Only) */}
+          <button
+            className="hidden md:flex text-2xl p-2 rounded-full transition-all duration-300 ease-in-out hover:bg-gray-300/20"
+            onClick={toggleTheme}
+          >
+            {theme === "dark" ? <BsSunFill /> : <BsMoonStarsFill />}
+          </button>
 
-        {/* HAMBURGER ICON (Mobile Only) */}
-        <button
-          className="md:hidden text-3xl"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          {menuOpen ? <HiX /> : <HiMenu />}
-        </button>
+          {/* DARK/LIGHT MODE BUTTON (Mobile Only) */}
+          <button
+            className="md:hidden text-2xl p-2 rounded-full transition-all duration-300 ease-in-out hover:bg-gray-300/20"
+            onClick={toggleTheme}
+          >
+            {theme === "dark" ? <BsSunFill /> : <BsMoonStarsFill />}
+          </button>
+
+          {/* HAMBURGER ICON (Mobile Only) */}
+          <button
+            className="md:hidden text-3xl"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            {menuOpen ? <HiX /> : <HiMenu />}
+          </button>
+        </div>
       </div>
 
       {/* MOBILE MENU */}
@@ -108,15 +119,6 @@ const Header = () => {
                 </li>
               )
           )}
-          {/* Dark/Light Button inside Mobile Menu */}
-          <button
-            className="flex items-center gap-2 text-lg mt-4 px-4 py-2 rounded-md transition-all
-              bg-gray-700 text-white hover:bg-gray-600"
-            onClick={toggleTheme}
-          >
-            {theme === "dark" ? <BsMoonStarsFill /> : <BsSunFill />}
-            {theme === "dark" ? "Dark Mode" : "Light Mode"}
-          </button>
         </ul>
       </nav>
 
@@ -126,7 +128,7 @@ const Header = () => {
           bg-[url(/assets/images/banner/coder.avif)] bg-top sm:bg-center bg-no-repeat bg-cover"
       >
         <div className="absolute inset-0 bg-black/60"></div>
-        <h1 className="relative z-10 text-2xl sm:text-4xl md:text-5xl font-bold not-italic">
+        <h1 className="relative z-10 text-2xl sm:text-4xl md:text-5xl font-bold not-italic px-2 sm:px-4">
           <TypeAnimation
             sequence={[
               "Hi, I'm Vivek Sharma",
