@@ -38,7 +38,7 @@ const Header = () => {
         {/* NAVIGATION DESKTOP */}
         <nav className="hidden md:flex flex-1 justify-center">
           <ul
-            className={`flex items-center gap-6 py-2 px-6 rounded-md ${
+            className={`flex items-center gap-6 py-4 rounded-full ${
               theme === "dark" ? "bg-gray-900" : "bg-gray-100 shadow-md"
             }`}
           >
@@ -48,7 +48,7 @@ const Header = () => {
                   <li key={item.id}>
                     <a
                       href={item.link}
-                      className={`font-medium px-4 sm:px-6 py-2 rounded-md transition-all duration-300 ease-in-out 
+                      className={`font-medium px-4 sm:px-6 py-4 rounded-full transition-all duration-300 ease-in-out 
                         ${
                           theme === "dark"
                             ? "hover:bg-gray-700 hover:text-yellow-400"
