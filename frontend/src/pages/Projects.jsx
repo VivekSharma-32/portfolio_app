@@ -24,27 +24,22 @@ const Projects = () => {
       {/* Projects Grid */}
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <ProductCard
-          imgUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFXMVsqeqstL0GCNxoVwhjfqmumLoghY4ywQ&s"
-          heading="E-commerce Project"
-          content="Responsive, secure, and scalable e-commerce platform with cart, payments, and order management."
-        />
-        <ProductCard
-          imgUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFXMVsqeqstL0GCNxoVwhjfqmumLoghY4ywQ&s"
+          imgUrl="/assets/images/projects/ecommerce.avif"
           heading="Multivendor E-commerce Project"
           content="A complete marketplace solution supporting multiple vendors, inventory management, and transactions."
         />
         <ProductCard
-          imgUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFXMVsqeqstL0GCNxoVwhjfqmumLoghY4ywQ&s"
+          imgUrl="/assets/images/projects/real-estate.avif"
           heading="Real Estate Project"
           content="Property listing platform with search filters, agent profiles, and virtual tour support."
         />
         <ProductCard
-          imgUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFXMVsqeqstL0GCNxoVwhjfqmumLoghY4ywQ&s"
+          imgUrl="/assets/images/projects/url-shortener.avif"
           heading="URL Shortener"
           content="Lightning-fast URL shortener with custom aliases, QR codes, and click analytics—built for shareability and scale."
         />
         <ProductCard
-          imgUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFXMVsqeqstL0GCNxoVwhjfqmumLoghY4ywQ&s"
+          imgUrl="/assets/images/projects/job-portal.avif"
           heading="Job Portal"
           content="A modern Job Portal that connects employers with job seekers—featuring smart search, resume uploads, applicant tracking, and role-based dashboards for seamless recruitment."
         />
