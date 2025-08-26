@@ -23,70 +23,83 @@ const Header = () => {
       }`}
     >
       {/* HEADER TOP */}
-      <div className="flex items-center justify-between w-full px-4 sm:px-6 md:px-10 py-3 sm:py-4">
-        {/* LOGO */}
-        <img
-          src={
-            theme === "dark"
-              ? "/assets/images/white.jpg"
-              : "/assets/images/black.jpg"
-          }
-          alt="Logo"
-          className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto object-contain cursor-pointer"
-        />
-
-        {/* NAVIGATION DESKTOP */}
-        <nav className="hidden md:flex flex-1 justify-center">
-          <ul
-            className={`flex items-center gap-6 py-4 rounded-full ${
-              theme === "dark" ? "bg-gray-900" : "bg-gray-100 shadow-md"
-            }`}
-          >
-            {navigation.map(
-              (item) =>
-                item.active === "yes" && (
-                  <li key={item.id}>
-                    <a
-                      href={item.link}
-                      className={`font-medium px-4 sm:px-6 py-4 rounded-full transition-all duration-300 ease-in-out 
-                        ${
-                          theme === "dark"
-                            ? "hover:bg-gray-700 hover:text-yellow-400"
-                            : "hover:bg-gray-200 hover:text-orange-600"
-                        }`}
-                    >
-                      {item.name}
-                    </a>
-                  </li>
-                )
-            )}
-          </ul>
-        </nav>
-
-        {/* MOBILE + THEME BUTTON */}
-        <div className="flex items-center gap-2">
-          {/* DARK/LIGHT MODE BUTTON (Desktop Only) */}
-          <button
-            className="hidden md:flex text-2xl p-2 rounded-full transition-all duration-300 ease-in-out hover:bg-gray-300/20"
-            onClick={toggleTheme}
-          >
-            {theme === "dark" ? <BsSunFill /> : <BsMoonStarsFill />}
-          </button>
-
-          {/* DARK/LIGHT MODE BUTTON (Mobile Only) */}
-          <button
-            className="md:hidden text-2xl p-2 rounded-full transition-all duration-300 ease-in-out hover:bg-gray-300/20"
-            onClick={toggleTheme}
-          >
-            {theme === "dark" ? <BsSunFill /> : <BsMoonStarsFill />}
-          </button>
-
-          {/* HAMBURGER ICON (Mobile Only) */}
-          <button
-            className="md:hidden text-3xl"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
+      <div className="w-full px-4 sm:px-6 md:px-10 py-3 sm:py-4">
+        {/* ---- MOBILE HEADER ---- */}
+        <div className="flex items-center justify-between md:hidden relative">
+          {/* HAMBURGER LEFT */}
+          <button className="text-3xl" onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? <HiX /> : <HiMenu />}
+          </button>
+
+          {/* LOGO CENTER */}
+          <div className="absolute left-1/2 transform -translate-x-1/2">
+            <img
+              src={
+                theme === "dark"
+                  ? "/assets/images/white.jpg"
+                  : "/assets/images/black.jpg"
+              }
+              alt="Logo"
+              className="h-8 w-auto object-contain cursor-pointer"
+            />
+          </div>
+
+          {/* THEME TOGGLE RIGHT */}
+          <button
+            className="text-2xl p-2 rounded-full transition-all duration-300 ease-in-out hover:bg-gray-300/20"
+            onClick={toggleTheme}
+          >
+            {theme === "dark" ? <BsSunFill /> : <BsMoonStarsFill />}
+          </button>
+        </div>
+
+        {/* ---- DESKTOP HEADER ---- */}
+        <div className="hidden md:flex items-center justify-between">
+          {/* LOGO LEFT */}
+          <img
+            src={
+              theme === "dark"
+                ? "/assets/images/white.jpg"
+                : "/assets/images/black.jpg"
+            }
+            alt="Logo"
+            className="h-10 md:h-12 lg:h-14 w-auto object-contain cursor-pointer"
+          />
+
+          {/* NAVIGATION CENTER */}
+          <nav className="flex flex-1 justify-center">
+            <ul
+              className={`flex items-center gap-6 py-4 rounded-full ${
+                theme === "dark" ? "bg-gray-900" : "bg-gray-100 shadow-md"
+              }`}
+            >
+              {navigation.map(
+                (item) =>
+                  item.active === "yes" && (
+                    <li key={item.id}>
+                      <a
+                        href={item.link}
+                        className={`font-medium px-4 sm:px-6 py-4 rounded-full transition-all duration-300 ease-in-out 
+                          ${
+                            theme === "dark"
+                              ? "hover:bg-gray-700 hover:text-yellow-400"
+                              : "hover:bg-gray-200 hover:text-orange-600"
+                          }`}
+                      >
+                        {item.name}
+                      </a>
+                    </li>
+                  )
+              )}
+            </ul>
+          </nav>
+
+          {/* THEME TOGGLE RIGHT */}
+          <button
+            className="text-2xl p-2 rounded-full transition-all duration-300 ease-in-out hover:bg-gray-300/20"
+            onClick={toggleTheme}
+          >
+            {theme === "dark" ? <BsSunFill /> : <BsMoonStarsFill />}
           </button>
         </div>
       </div>
@@ -123,11 +136,18 @@ const Header = () => {
       </nav>
 
       {/* HERO SECTION */}
+      {/* HERO SECTION */}
       <div
         className="relative min-h-[30vh] sm:min-h-[80vh] md:min-h-screen flex items-center justify-center text-center italic
-          bg-[url(/assets/images/banner/coder.avif)] bg-top sm:bg-center bg-no-repeat bg-cover"
+    bg-[url(/assets/images/banner/coder.avif)] bg-top sm:bg-center bg-no-repeat bg-cover"
       >
-        <div className="absolute inset-0 bg-black/60"></div>
+        {/* Overlay changes with theme */}
+        <div
+          className={`absolute inset-0 ${
+            theme === "dark" ? "bg-black/60" : "bg-white/60"
+          }`}
+        ></div>
+
         <h1 className="relative z-10 text-2xl sm:text-4xl md:text-5xl font-bold not-italic px-2 sm:px-4">
           <TypeAnimation
             sequence={[
@@ -147,11 +167,11 @@ const Header = () => {
             speed={50}
             wrapper="div"
             className="text-2xl sm:text-4xl md:text-5xl font-bold 
-             bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 
-             bg-clip-text text-transparent 
-             block max-w-[90%] sm:max-w-[80%] md:max-w-3xl 
-             mx-auto whitespace-pre-line break-words text-center
-             h-[4rem] sm:h-[5rem] md:h-[6rem] flex items-center justify-center"
+       bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 
+       bg-clip-text text-transparent 
+       block max-w-[90%] sm:max-w-[80%] md:max-w-3xl 
+       mx-auto whitespace-pre-line break-words text-center
+       h-[4rem] sm:h-[5rem] md:h-[6rem] flex items-center justify-center"
             repeat={Infinity}
           />
         </h1>
