@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { MdComputer } from "react-icons/md";
 import { motion } from "framer-motion";
 import { ThemeContext } from "../context/ThemeContext"; // adjust path if needed
+import { Link } from "react-router-dom";
 
 const About = () => {
   const { theme } = useContext(ThemeContext);
@@ -73,7 +74,7 @@ const About = () => {
           {/* Contact Button */}
           <div className="mt-8 flex justify-center md:justify-start">
             <a
-              href="#contact"
+              href="#hireme"
               className="px-6 py-3 rounded-full font-semibold bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 
                          text-black shadow-lg transition-all duration-300 
                          hover:shadow-yellow-400/50 hover:scale-105 hover:text-white

@@ -3,7 +3,6 @@ import { HiMenu, HiX } from "react-icons/hi";
 import { TypeAnimation } from "react-type-animation";
 import { BsMoonStarsFill, BsSunFill } from "react-icons/bs";
 import { useTheme } from "../../context/ThemeContext";
-import { motion } from "framer-motion";
 
 const navigation = [
   { id: 1, name: "About", active: "yes", link: "#about" },
