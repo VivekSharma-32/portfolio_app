@@ -7,7 +7,7 @@ html {
 /* Custom Gradient Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
-  height: 12px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
