@@ -3,6 +3,7 @@ import { HiMenu, HiX } from "react-icons/hi";
 import { TypeAnimation } from "react-type-animation";
 import { BsMoonStarsFill, BsSunFill } from "react-icons/bs";
 import { useTheme } from "../../context/ThemeContext";
+import { motion } from "framer-motion";
 
 const navigation = [
   { id: 1, name: "About", active: "yes", link: "#about" },
@@ -136,10 +137,11 @@ const Header = () => {
       </nav>
 
       {/* HERO SECTION */}
-      {/* HERO SECTION */}
       <div
-        className="relative min-h-[30vh] sm:min-h-[80vh] md:min-h-screen flex items-center justify-center text-center italic
-    bg-[url(/assets/images/banner/coder.avif)] bg-top sm:bg-center bg-no-repeat bg-cover"
+        className="relative min-h-[30vh] sm:min-h-[80vh] md:min-h-screen 
+                   flex flex-col items-center justify-center text-center italic
+                   bg-[url(/assets/images/banner/coder.avif)] bg-top sm:bg-center 
+                   bg-no-repeat bg-cover"
       >
         {/* Overlay changes with theme */}
         <div
@@ -148,6 +150,7 @@ const Header = () => {
           }`}
         ></div>
 
+        {/* Animated Heading */}
         <h1 className="relative z-10 text-2xl sm:text-4xl md:text-5xl font-bold not-italic px-2 sm:px-4">
           <TypeAnimation
             sequence={[
@@ -167,14 +170,36 @@ const Header = () => {
             speed={50}
             wrapper="div"
             className="text-2xl sm:text-4xl md:text-5xl font-bold 
-       bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 
-       bg-clip-text text-transparent 
-       block max-w-[90%] sm:max-w-[80%] md:max-w-3xl 
-       mx-auto whitespace-pre-line break-words text-center
-       h-[4rem] sm:h-[5rem] md:h-[6rem] flex items-center justify-center"
+                       bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 
+                       bg-clip-text text-transparent 
+                       block max-w-[90%] sm:max-w-[80%] md:max-w-3xl 
+                       mx-auto text-center
+                       items-center justify-center"
             repeat={Infinity}
           />
         </h1>
+
+        <div className="relative mt-3 inline-block rounded-full p-[3px] overflow-hidden">
+          {/* Animated white glow */}
+          <motion.div
+            className="absolute inset-0 rounded-full bg-white blur-md"
+            animate={{ opacity: [0.3, 1, 0.3] }}
+            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+          />
+
+          {/* Mask layer so glow stays only on border */}
+          <div className="absolute inset-[4px] rounded-full bg-black"></div>
+
+          {/* Button content */}
+          <a
+            href="/assets/pdf/my_resume.pdf"
+            target="_blank"
+            className="relative z-10 block px-8 py-3 rounded-full text-xl font-semibold text-white
+               bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 shadow-lg"
+          >
+            Download CV
+          </a>
+        </div>
       </div>
     </div>
   );
