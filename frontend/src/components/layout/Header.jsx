@@ -154,7 +154,7 @@ const Header = () => {
         <h1
           className="relative z-10 text-2xl sm:text-4xl md:text-5xl font-bold  
              px-2 sm:px-4 
-             text-center max-w-[90%] sm:max-w-[80%] md:max-w-3xl mx-auto"
+             text-center max-w-[100%] sm:max-w-[80%] md:max-w-3xl mx-auto"
         >
           <TypeAnimation
             sequence={[
@@ -180,27 +180,17 @@ const Header = () => {
           />
         </h1>
 
-        <div className="relative mt-5 inline-block rounded-full p-[3px] overflow-hidden">
-          {/* Animated white glow */}
-          <motion.div
-            className="absolute inset-0 rounded-full bg-white blur-md"
-            animate={{ opacity: [0.3, 1, 0.3] }}
-            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-          />
-
-          {/* Mask layer so glow stays only on border */}
-          <div className="absolute inset-[4px] rounded-full bg-black"></div>
-
-          {/* Button content */}
-          <a
-            href="/assets/pdf/my_resume.pdf"
-            target="_blank"
-            className="relative z-10 block px-6 py-2 rounded-full text-md font-semibold text-white
-               bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 shadow-lg not-italic"
-          >
-            Download CV
-          </a>
-        </div>
+        <a
+          href="/assets/pdf/my_resume.pdf"
+          target="_blank"
+          className="px-6 py-2 mt-3 rounded-full font-semibold bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 
+                         text-black shadow-lg transition-all duration-300 
+                         hover:shadow-yellow-400/50 hover:scale-105 hover:text-white
+                         relative overflow-hidden group"
+        >
+          <span className="relative z-10">Download CV</span>
+          <span className="absolute inset-0 bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 opacity-0 group-hover:opacity-100 transition duration-500"></span>
+        </a>
       </div>
     </div>
   );
