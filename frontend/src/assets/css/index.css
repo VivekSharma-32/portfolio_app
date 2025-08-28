@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Custom Gradient Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
