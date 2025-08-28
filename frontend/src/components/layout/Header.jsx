@@ -152,7 +152,7 @@ const Header = () => {
 
         {/* Animated Heading */}
         <h1
-          className="relative z-10 text-2xl sm:text-4xl md:text-5xl font-bold not-italic 
+          className="relative z-10 text-2xl sm:text-4xl md:text-5xl font-bold  
              px-2 sm:px-4 
              text-center max-w-[90%] sm:max-w-[80%] md:max-w-3xl mx-auto"
         >
@@ -195,8 +195,8 @@ const Header = () => {
           <a
             href="/assets/pdf/my_resume.pdf"
             target="_blank"
-            className="relative z-10 block px-6 py-2 rounded-full text-xl font-semibold text-white
-               bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 shadow-lg"
+            className="relative z-10 block px-6 py-2 rounded-full text-md font-semibold text-white
+               bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 shadow-lg not-italic"
           >
             Download CV
           </a>
