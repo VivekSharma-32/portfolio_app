@@ -24,9 +24,8 @@ const About = () => {
           className="md:basis-1/2"
         >
           <h2
-            className="text-2xl sm:text-4xl md:text-5xl font-bold 
-             bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 
-             bg-clip-text text-transparent mb-10"
+            className="text-2xl sm:text-4xl md:text-5xl font-bold  
+             mb-10"
           >
             Crafting Code, Creating Impact
           </h2>
@@ -75,13 +74,17 @@ const About = () => {
           <div className="mt-8 flex justify-center md:justify-start">
             <a
               href="#hireme"
-              className="px-6 py-3 rounded-full font-semibold bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 
-                         text-black shadow-lg transition-all duration-300 
+              className={`px-6 py-3 rounded-full font-semibold bg-gradient-to-r 
+                         ${
+                           theme === "dark"
+                             ? "bg-transparent text-white"
+                             : "bg-black text-white border-none"
+                         } border shadow-lg transition-all duration-300 
                          hover:shadow-yellow-400/50 hover:scale-105 hover:text-white
-                         relative overflow-hidden group"
+                         relative overflow-hidden group`}
             >
               <span className="relative z-10">Let’s Connect</span>
-              <span className="absolute inset-0 bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 opacity-0 group-hover:opacity-100 transition duration-500"></span>
+              <span className="absolute inset-0 bg-gradient-to-r transition duration-500"></span>
             </a>
           </div>
         </motion.div>

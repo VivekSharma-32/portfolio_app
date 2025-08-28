@@ -82,9 +82,7 @@ const Footer = () => {
       {/* Bottom bar */}
       <div className="mt-10 text-center text-sm border-t pt-5">
         &copy; {new Date().getFullYear()} All Rights Reserved. Developed by{" "}
-        <span className="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent font-bold">
-          Vivek Sharma
-        </span>
+        <span className="font-semibold underline">Vivek Sharma</span>
       </div>
     </footer>
   );

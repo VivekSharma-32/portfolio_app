@@ -15,8 +15,7 @@ const Projects = () => {
       {/* Section Heading */}
       <h2
         className="text-center text-2xl sm:text-4xl md:text-5xl font-bold 
-             bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 
-             bg-clip-text text-transparent mb-10"
+             mb-10"
       >
         Recent Projects
       </h2>

@@ -14,11 +14,7 @@ const WhatIDo = () => {
       }`}
     >
       {/* Section Title */}
-      <h2
-        className="text-center text-2xl sm:text-4xl md:text-5xl font-bold 
-             bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 
-             bg-clip-text text-transparent mb-10"
-      >
+      <h2 className="text-center text-2xl sm:text-4xl md:text-5xl font-bold  mb-10">
         What I Do
       </h2>
 

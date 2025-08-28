@@ -3,6 +3,7 @@ import { HiMenu, HiX } from "react-icons/hi";
 import { TypeAnimation } from "react-type-animation";
 import { BsMoonStarsFill, BsSunFill } from "react-icons/bs";
 import { useTheme } from "../../context/ThemeContext";
+import { Link } from "react-router-dom";
 
 const navigation = [
   { id: 1, name: "About", active: "yes", link: "#about" },
@@ -33,15 +34,17 @@ const Header = () => {
 
           {/* LOGO CENTER */}
           <div className="absolute left-1/2 transform -translate-x-1/2">
-            <img
-              src={
-                theme === "dark"
-                  ? "/assets/images/white.jpg"
-                  : "/assets/images/black.jpg"
-              }
-              alt="Logo"
-              className="h-8 w-auto object-contain cursor-pointer"
-            />
+            <Link to="/">
+              <img
+                src={
+                  theme === "dark"
+                    ? "/assets/images/white.jpg"
+                    : "/assets/images/black.jpg"
+                }
+                alt="Logo"
+                className="h-8 w-auto object-contain cursor-pointer"
+              />
+            </Link>
           </div>
 
           {/* THEME TOGGLE RIGHT */}
@@ -153,42 +156,22 @@ const Header = () => {
         <h1
           className="relative z-10 text-2xl sm:text-4xl md:text-5xl font-bold  
              px-2 sm:px-4 
-             text-center max-w-[100%] sm:max-w-[80%] md:max-w-3xl mx-auto"
+             text-center not-italic"
         >
-          <TypeAnimation
-            sequence={[
-              "Hi, I'm Vivek Sharma",
-              2000,
-              "Full-Stack Developer",
-              2000,
-              "Building Modern Web Apps",
-              2000,
-              "Frontend & Backend Enthusiast",
-              2000,
-              "React, Node.js & Cloud Deployment",
-              2000,
-              "Passionate About Problem Solving ",
-              2000,
-            ]}
-            speed={50}
-            wrapper="span"
-            className="block leading-snug text-2xl sm:text-4xl md:text-5xl font-bold 
-               bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 
-               bg-clip-text text-transparent"
-            repeat={Infinity}
-          />
+          Hi, welcome to my portolio website...
         </h1>
 
         <a
           href="/assets/pdf/my_resume.pdf"
           target="_blank"
-          className="px-6 py-2 mt-3 rounded-full font-semibold bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 
-                         text-black shadow-lg transition-all duration-300 
-                         hover:shadow-yellow-400/50 hover:scale-105 hover:text-white
-                         relative overflow-hidden group"
+          className={`px-6 py-2 mt-8 rounded-full font-semibold ${
+            theme === "dark"
+              ? "bg-transparent text-white"
+              : "bg-black text-white border-none"
+          } shadow-lg transition-all duration-300  hover:scale-105 hover:text-white relative overflow-hidden border not-italic`}
         >
           <span className="relative z-10">Download CV</span>
-          <span className="absolute inset-0 bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-600 opacity-0 group-hover:opacity-100 transition duration-500"></span>
+          <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500"></span>
         </a>
       </div>
     </div>

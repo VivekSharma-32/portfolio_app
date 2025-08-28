@@ -59,11 +59,7 @@ const Contact = () => {
       }`}
     >
       {/* Section Heading */}
-      <h2
-        className="text-center text-2xl sm:text-4xl md:text-5xl font-bold 
-             bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 
-             bg-clip-text text-transparent mb-10"
-      >
+      <h2 className="text-center text-2xl sm:text-4xl md:text-5xl font-bold mb-10">
         Hire Me
       </h2>
 
@@ -85,7 +81,9 @@ const Contact = () => {
             </div>
             <div className="text-center sm:text-left">
               <h3 className="font-semibold text-lg">Phone</h3>
-              <p className="text-gray-500 dark:text-gray-300">
+              <p
+                className={`${theme === "dark" ? " text-white" : "text-black"}`}
+              >
                 8493018103 / 6006552260
               </p>
             </div>
@@ -107,7 +105,7 @@ const Contact = () => {
               <h3 className="font-semibold text-lg">Email</h3>
               <a
                 href="mailto:vivek.sharma1275@gmail.com"
-                className="hover:underline transition-colors text-gray-500 dark:text-gray-300 hover:text-red-500"
+                className={`${theme === "dark" ? " text-white" : "text-black"}`}
               >
                 vivek.sharma1275@gmail.com
               </a>
@@ -132,7 +130,7 @@ const Contact = () => {
                 href="https://www.linkedin.com/in/vivek-sharma-737672160/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:underline transition-colors text-gray-500 dark:text-gray-300 hover:text-blue-500"
+                className={`${theme === "dark" ? " text-white" : "text-black"}`}
               >
                 Vivek Sharma
               </a>
@@ -264,11 +262,14 @@ const Contact = () => {
             <button
               type="submit"
               disabled={loading}
-              className={`w-full sm:w-auto px-6 py-3 rounded-full font-semibold 
-   bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 
-   shadow-sm transition-all duration-300 hover:shadow-yellow-400/50 
-   flex items-center justify-center gap-2 cursor-pointer
-   ${loading ? "opacity-70 cursor-not-allowed" : "hover:scale-105"}`}
+              className={`w-full sm:w-auto px-6 py-3 rounded-full font-semibold border shadow-sm transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer
+              ${
+                loading ? "opacity-70 cursor-not-allowed" : "hover:scale-105"
+              } ${
+                theme === "dark"
+                  ? "bg-transparent text-white"
+                  : "bg-black text-white border-none"
+              }`}
             >
               {loading ? "Sending..." : "Send Message"}
             </button>
