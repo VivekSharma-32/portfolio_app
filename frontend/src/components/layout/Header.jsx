@@ -151,7 +151,11 @@ const Header = () => {
         ></div>
 
         {/* Animated Heading */}
-        <h1 className="relative z-10 text-2xl sm:text-4xl md:text-5xl font-bold not-italic px-2 sm:px-4">
+        <h1
+          className="relative z-10 text-2xl sm:text-4xl md:text-5xl font-bold not-italic 
+             px-2 sm:px-4 
+             text-center max-w-[90%] sm:max-w-[80%] md:max-w-3xl mx-auto"
+        >
           <TypeAnimation
             sequence={[
               "Hi, I'm Vivek Sharma",
@@ -168,13 +172,10 @@ const Header = () => {
               2000,
             ]}
             speed={50}
-            wrapper="div"
-            className="text-2xl sm:text-4xl md:text-5xl font-bold 
-                       bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 
-                       bg-clip-text text-transparent 
-                       block max-w-[90%] sm:max-w-[80%] md:max-w-3xl 
-                       mx-auto text-center
-                       items-center justify-center"
+            wrapper="span"
+            className="block leading-snug text-2xl sm:text-4xl md:text-5xl font-bold 
+               bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 
+               bg-clip-text text-transparent"
             repeat={Infinity}
           />
         </h1>
