@@ -1,9 +1,20 @@
-import { FaEnvelope, FaLinkedin, FaPhoneAlt, FaUser } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaLinkedin,
+  FaPhoneAlt,
+  FaUser,
+  FaCheckCircle,
+} from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { useTheme } from "../context/ThemeContext";
-
+import { useState } from "react";
+import { registerQuery } from "../apis/contact";
+import { ConfettiFireworks } from "./ConfettiFireworks";
 const Contact = () => {
+  const [loading, setLoading] = useState(false);
+  const [showDialog, setShowDialog] = useState(false);
+  const [fireworks, setFireworks] = useState(false);
   const { theme } = useTheme();
 
   const {
@@ -13,10 +24,28 @@ const Contact = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    if (data !== "") {
-      toast.success("Your message has been submitted successfully.");
-      reset();
+  const onSubmit = async (data) => {
+    setLoading(true);
+    try {
+      const result = await registerQuery({
+        name: data.name,
+        email: data.email,
+        mobile: data.mobile,
+        message: data.message,
+      });
+
+      if (result?.success) {
+        toast.success(result?.message);
+        setShowDialog(true);
+        setFireworks(true);
+        reset();
+      } else {
+        toast.error("Unable to save your query.");
+      }
+    } catch (error) {
+      toast.error("Something went wrong");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -222,11 +251,11 @@ const Contact = () => {
                       ? "bg-gray-900 text-white"
                       : "bg-gray-100 text-black border border-gray-300"
                   }`}
-                {...register("msg", { required: "Message is required" })}
+                {...register("message", { required: "Message is required" })}
               ></textarea>
-              {errors.msg && (
+              {errors.message && (
                 <p className="text-red-400 text-sm mt-1">
-                  {errors.msg.message}
+                  {errors.message.message}
                 </p>
               )}
             </div>
@@ -234,16 +263,48 @@ const Contact = () => {
             {/* Submit */}
             <button
               type="submit"
-              className="w-full sm:w-auto px-6 py-3 rounded-full font-semibold 
-             bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 
-             shadow-sm transition-all duration-300 hover:shadow-yellow-400/50 hover:scale-102 
-             flex items-center justify-center gap-2 cursor-pointer"
+              disabled={loading}
+              className={`w-full sm:w-auto px-6 py-3 rounded-full font-semibold 
+   bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 
+   shadow-sm transition-all duration-300 hover:shadow-yellow-400/50 
+   flex items-center justify-center gap-2 cursor-pointer
+   ${loading ? "opacity-70 cursor-not-allowed" : "hover:scale-105"}`}
             >
-              Send Message
+              {loading ? "Sending..." : "Send Message"}
             </button>
           </form>
         </div>
       </div>
+
+      {/*  Thank You Dialog */}
+      {showDialog && (
+        <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 w-full">
+          {fireworks && <ConfettiFireworks />}
+          <div
+            className={`rounded-2xl shadow-xl p-8  max-w-sm w-full text-center relative z-10
+      ${
+        theme === "dark" ? "bg-gray-800 text-white" : "bg-white text-gray-900"
+      }`}
+          >
+            <FaCheckCircle className="text-green-500 text-5xl mx-auto mb-4" />
+            <h3 className="text-2xl font-bold mb-2">Thank You!</h3>
+            <p className="mb-6 text-sm">
+              I truly appreciate you reaching out. Your message has been
+              received, and I will get back to you shortly. Wishing you a
+              wonderful day ahead!
+            </p>
+            <button
+              onClick={() => {
+                setShowDialog(false);
+                setFireworks(false);
+              }}
+              className="px-6 py-2 rounded-full font-semibold bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-white shadow hover:scale-105 transition cursor-pointer"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
