@@ -162,7 +162,7 @@ const Header = () => {
               2000,
               "Frontend & Backend Enthusiast",
               2000,
-              "React, Node.js & Cloud Lover",
+              "React, Node.js & Cloud Deployment",
               2000,
               "Passionate About Problem Solving ",
               2000,
@@ -179,7 +179,7 @@ const Header = () => {
           />
         </h1>
 
-        <div className="relative mt-3 inline-block rounded-full p-[3px] overflow-hidden">
+        <div className="relative mt-5 inline-block rounded-full p-[3px] overflow-hidden">
           {/* Animated white glow */}
           <motion.div
             className="absolute inset-0 rounded-full bg-white blur-md"
@@ -194,7 +194,7 @@ const Header = () => {
           <a
             href="/assets/pdf/my_resume.pdf"
             target="_blank"
-            className="relative z-10 block px-8 py-3 rounded-full text-xl font-semibold text-white
+            className="relative z-10 block px-6 py-2 rounded-full text-xl font-semibold text-white
                bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 shadow-lg"
           >
             Download CV
