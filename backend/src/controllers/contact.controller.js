@@ -1,4 +1,5 @@
 const Contact = require("../models/contact.model");
+const { transporter } = require("../services/mail.service");
 
 const getAll = async (req, res) => {
   try {
@@ -27,9 +28,25 @@ const register = async (req, res) => {
         message: "Please fill all the fields",
       });
     }
-    const contact = new Contact({ name, email, mobile, message });
 
+    const contact = new Contact({ name, email, mobile, message });
     await contact.save();
+
+    //send mail
+    const mailOptions = {
+      from: email,
+      to: process.env.GOOGLE_EMAIL_ID,
+      subject: "New Contact Form Submission",
+      html: `
+        <h3>New Contact Form Submission</h3>
+        <p><b>Name:</b> ${name}</p>
+        <p><b>Email:</b> ${email}</p>
+        <p><b>Mobile:</b> ${mobile}</p>
+        <p><b>Message:</b> ${message}</p>
+      `,
+    };
+
+    await transporter.send(mailOptions);
 
     res.status(201).json({
       success: true,
