@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "https://portfolio-backend-blond-pi.vercel.app/",
+  baseURL: "https://api-portfolio-fi1b.onrender.com/api/v1",
   timeout: 10000,
 });
 
