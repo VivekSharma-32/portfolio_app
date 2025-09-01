@@ -29,6 +29,16 @@ const register = async (req, res) => {
       });
     }
 
+    // check if email already exists
+    const existingContact = await Contact.findOne({ email: email });
+    if (existingContact) {
+      return res.status(409).json({
+        // 409 Conflict
+        success: false,
+        message: "This email is already registered with us.",
+      });
+    }
+
     const contact = new Contact({ name, email, mobile, message });
     await contact.save();
 
@@ -134,7 +144,7 @@ const register = async (req, res) => {
   } catch (error) {
     return res.status(500).json({
       success: false,
-      message: error.message,
+      message: "OOPS! Unable to send query. Please try again after sometime",
     });
   }
 };

@@ -43,7 +43,7 @@ const Contact = () => {
         toast.error("Unable to save your query.");
       }
     } catch (error) {
-      toast.error("Something went wrong");
+      toast.error(error.message);
     } finally {
       setLoading(false);
     }
