@@ -155,10 +155,10 @@ const Header = () => {
         {/* Animated Heading */}
         <h1
           className="relative z-10 text-2xl sm:text-4xl md:text-5xl font-bold  
-             px-2 sm:px-4 
+             px-2 sm:px-4 w-1/2 
              text-center not-italic"
         >
-          Hi, welcome to my portolio website...
+          Hey! Step into my portfolio, where every project tells a story.
         </h1>
 
         <a

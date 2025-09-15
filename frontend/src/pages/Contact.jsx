@@ -10,7 +10,7 @@ import { toast } from "react-toastify";
 import { useTheme } from "../context/ThemeContext";
 import { useState } from "react";
 import { registerQuery } from "../apis/contact";
-import { ConfettiFireworks } from "./ConfettiFireworks";
+import { sanitizeInput } from "../utils/sanitize";
 const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [showDialog, setShowDialog] = useState(false);
@@ -27,12 +27,14 @@ const Contact = () => {
   const onSubmit = async (data) => {
     setLoading(true);
     try {
-      const result = await registerQuery({
-        name: data.name,
-        email: data.email,
-        mobile: data.mobile,
-        message: data.message,
-      });
+      const sanitizedData = {
+        name: sanitizeInput(data.name),
+        email: sanitizeInput(data.email),
+        mobile: sanitizeInput(data.mobile),
+        message: sanitizeInput(data.message),
+      };
+
+      const result = await registerQuery(sanitizedData);
 
       if (result?.success) {
         toast.success(result?.message);
@@ -280,7 +282,6 @@ const Contact = () => {
       {/*  Thank You Dialog */}
       {showDialog && (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 w-full">
-          {fireworks && <ConfettiFireworks />}
           <div
             className={`rounded-2xl shadow-xl p-8  max-w-sm w-full text-center relative z-10
       ${
