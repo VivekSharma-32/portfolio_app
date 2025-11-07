@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
-import { TypeAnimation } from "react-type-animation";
 import { BsMoonStarsFill, BsSunFill } from "react-icons/bs";
 import { useTheme } from "../../context/ThemeContext";
 import { Link } from "react-router-dom";
